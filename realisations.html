@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Nos réalisations avant / après — RENOV HABITAT 33</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --encre:#1A1A1A; --encre-2:#262624;
+  --ivoire:#F2F0EA; --blanc:#FFFFFF;
+  --or:#A9834B; --or-clair:#C9A96E;
+  --pierre:#5E6672; --ligne:#E1DDD2;
+  --vert:#1E7A3F;
+  --r:14px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',system-ui,sans-serif; background:var(--ivoire); color:var(--encre); line-height:1.55; }
+img { user-select:none; -webkit-user-drag:none; }
+
+header { position:sticky; top:0; z-index:50; background:rgba(26,26,26,.92); backdrop-filter:blur(10px);
+  display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px clamp(16px,4vw,48px);
+  border-bottom:1px solid rgba(201,169,110,.25); }
+.logo { display:inline-flex; align-items:center; gap:12px; font-family:'Archivo'; font-weight:900; font-stretch:110%; letter-spacing:.04em; color:var(--blanc); font-size:clamp(15px,2.4vw,19px); text-transform:uppercase; text-decoration:none; }
+.logo b { color:var(--or-clair); font-weight:900; }
+.cta { font-family:'Archivo'; font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--encre); background:var(--or-clair); border:none; border-radius:999px; padding:10px 18px; text-decoration:none; white-space:nowrap;
+  transition:transform .15s ease, background .15s ease; }
+.logo-img { width:42px; height:42px; border-radius:0; display:block; box-shadow:0 0 0 1px rgba(201,169,110,.45); }
+.cta:hover { background:#DDBE8B; transform:translateY(-1px); }
+
+
+.nav-links { display:flex; align-items:center; gap:clamp(10px,2vw,26px); }
+.nav-links a { font-family:'Archivo'; font-weight:700; font-size:13px; letter-spacing:.07em; text-transform:uppercase;
+  color:#CFCCC4; text-decoration:none; padding:6px 2px; border-bottom:2px solid transparent; }
+.nav-links a:hover { color:#FFFFFF; }
+.nav-links a.actif { color:var(--or-clair); border-bottom-color:var(--or-clair); }
+@media (max-width:720px) {
+  header { flex-wrap:wrap; }
+  .nav-links { order:3; width:100%; justify-content:space-between; padding-top:8px; gap:8px; }
+  .nav-links a { font-size:12px; }
+}
+
+.hero { background:var(--encre); color:var(--blanc); padding:clamp(28px,5vw,64px) clamp(16px,4vw,48px) clamp(36px,6vw,72px); }
+.hero-inner { max-width:1100px; margin:0 auto; }
+.eyebrow { font-family:'Archivo'; font-weight:700; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--or-clair); display:block; margin-bottom:14px; }
+h1 { font-family:'Archivo'; font-weight:900; font-stretch:115%; text-transform:uppercase; line-height:.98; letter-spacing:.005em;
+  font-size:clamp(34px,7vw,74px); margin-bottom:18px; }
+h1 em { font-style:normal; color:var(--or-clair); }
+.hero p.sub { max-width:56ch; color:#B8B5AE; font-size:clamp(14px,1.6vw,17px); margin-bottom:30px; }
+.hero p.sub strong { color:var(--blanc); font-weight:600; }
+
+.ba { display:flex; flex-direction:column; background:var(--blanc); border-radius:var(--r); overflow:hidden; box-shadow:0 1px 2px rgba(26,26,26,.06), 0 12px 32px -18px rgba(26,26,26,.25); outline-offset:3px; }
+.ba:focus-visible { outline:3px solid var(--or); }
+.ba-frame { position:relative; flex:0 0 auto; aspect-ratio:3/4; overflow:hidden; cursor:ew-resize; touch-action:pan-y; background:var(--encre-2); }
+.hero-ba .ba-frame { aspect-ratio:4/5; }
+@media (min-width:720px) { .hero-ba .ba-frame { aspect-ratio:16/10; } }
+.ba-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+.ba-apres { clip-path:inset(0 0 0 50%); }
+.ba-handle { position:absolute; top:0; bottom:0; left:50%; width:0; pointer-events:none; }
+.ba-line { position:absolute; top:0; bottom:0; left:-1.5px; width:3px; background:var(--blanc); box-shadow:0 0 0 1px rgba(26,26,26,.15); }
+.ba-knob { position:absolute; top:50%; left:0; transform:translate(-50%,-50%); width:46px; height:46px; border-radius:50%;
+  background:var(--or-clair); color:var(--encre); display:grid; place-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.35); border:2px solid var(--blanc); }
+.tag { position:absolute; top:12px; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  padding:5px 11px; border-radius:999px; color:var(--blanc); }
+.tag-avant { left:12px; background:rgba(26,26,26,.78); }
+.tag-apres { right:12px; background:var(--vert); }
+.ba figcaption { flex:1; display:flex; padding:0; }
+.card-cta { flex:1; display:flex; align-items:center; justify-content:space-between; gap:14px;
+  padding:13px 14px 13px 16px; text-decoration:none; color:var(--encre); background:var(--blanc);
+  border-top:1px solid var(--ligne); cursor:pointer;
+  transition:background .18s ease, color .18s ease; }
+.cap-text { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.cap-top { font-size:14px; font-weight:600; line-height:1.35; }
+.cap-sub { font-family:'Archivo'; font-weight:700; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--or); transition:color .18s ease; }
+.num { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:.1em; color:var(--or); margin-right:4px; }
+.cap-arrow { flex:0 0 40px; height:40px; border-radius:50%; display:grid; place-items:center;
+  background:var(--or-clair); color:var(--encre); box-shadow:0 1px 4px rgba(26,26,26,.18);
+  transition:transform .18s ease, background .18s ease; }
+.card-cta:hover, .card-cta:focus-visible { background:var(--encre); color:var(--blanc); }
+.card-cta:hover .cap-sub, .card-cta:focus-visible .cap-sub { color:var(--or-clair); }
+.card-cta:hover .cap-arrow, .card-cta:focus-visible .cap-arrow { transform:translateX(4px); }
+.card-cta:active .cap-arrow { transform:translateX(4px) scale(.92); }
+.card-cta:focus-visible { outline:3px solid var(--or); outline-offset:-3px; }
+.hero-ba .card-cta { background:var(--encre-2); color:var(--blanc); border-top:1px solid rgba(201,169,110,.25); }
+.hero-ba .card-cta:hover, .hero-ba .card-cta:focus-visible { background:var(--or-clair); color:var(--encre); }
+.hero-ba .card-cta:hover .cap-sub, .hero-ba .card-cta:focus-visible .cap-sub { color:var(--encre); }
+.hero-ba .card-cta:hover .num, .hero-ba .card-cta:focus-visible .num { color:var(--encre); }
+.hint { text-align:center; font-size:13px; color:#8E8B84; margin-top:12px; }
+
+main { max-width:1180px; margin:0 auto; padding:clamp(28px,5vw,56px) clamp(16px,4vw,48px); }
+h2 { font-family:'Archivo'; font-weight:900; font-stretch:112%; text-transform:uppercase; font-size:clamp(22px,3.4vw,34px); line-height:1.05; }
+.filters { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 26px; position:sticky; top:66px; z-index:40;
+  background:linear-gradient(var(--ivoire) 82%, transparent); padding:10px 0 14px; }
+.chip { font-family:'Archivo'; font-weight:700; font-size:13px; letter-spacing:.03em; cursor:pointer;
+  border:1.5px solid var(--ligne); background:var(--blanc); color:var(--encre); border-radius:999px; padding:8px 14px;
+  display:inline-flex; align-items:center; gap:7px; transition:all .15s ease; }
+.chip i { font-style:normal; font-size:11px; font-weight:800; color:var(--pierre); background:var(--ivoire); border-radius:999px; padding:1px 7px; }
+.chip:hover { border-color:var(--or); }
+.chip.is-on { background:var(--encre); color:var(--blanc); border-color:var(--encre); }
+.chip.is-on i { background:var(--or-clair); color:var(--encre); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:clamp(16px,2.5vw,28px); }
+.ba.is-hidden { display:none; }
+.card-anim { animation:pop .35s ease both; }
+@keyframes pop { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+
+.chantier { background:var(--encre); color:var(--blanc); margin-top:clamp(40px,7vw,80px); padding:clamp(32px,5vw,64px) clamp(16px,4vw,48px); }
+.chantier-inner { max-width:1180px; margin:0 auto; }
+.chantier h2 em { font-style:normal; color:var(--or-clair); }
+.chantier p.sub { color:#B8B5AE; max-width:60ch; margin:12px 0 26px; font-size:15px; }
+.steps { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+.step { position:relative; background:var(--encre-2); border:1px solid rgba(201,169,110,.2); border-radius:var(--r); overflow:hidden; }
+.step img { width:100%; aspect-ratio:4/4.6; object-fit:cover; display:block; }
+.step p { padding:12px 14px 14px; font-size:13.5px; }
+.step p span { color:#B8B5AE; }
+.step-badge { position:absolute; top:10px; left:10px; z-index:2; width:32px; height:32px; border-radius:50%;
+  background:var(--or-clair); color:var(--encre); font-family:'Archivo'; font-weight:900; display:grid; place-items:center; font-size:15px;
+  border:2px solid var(--encre); }
+
+/* ---------- fiche détail ---------- */
+#fiche { display:none; }
+body.mode-fiche #accueil { display:none; }
+body.mode-fiche #fiche { display:block; }
+.fiche-wrap { max-width:900px; margin:0 auto; padding:clamp(22px,4vw,44px) clamp(16px,4vw,48px) clamp(40px,6vw,72px); }
+.back { display:inline-flex; align-items:center; gap:8px; font-family:'Archivo'; font-weight:700; font-size:13px; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--encre); text-decoration:none; margin-bottom:20px; border-bottom:2px solid var(--or); padding-bottom:2px; }
+.back:hover { color:var(--or); }
+.fiche-eyebrow { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:8px; }
+.fiche-wrap h1 { font-size:clamp(26px,4.6vw,44px); text-transform:none; font-stretch:108%; line-height:1.06; margin-bottom:16px; }
+.meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+.meta span { font-family:'Archivo'; font-weight:700; font-size:12.5px; letter-spacing:.04em; background:var(--blanc); border:1.5px solid var(--ligne); border-radius:999px; padding:7px 13px; }
+.meta span b { color:var(--or); font-weight:800; margin-right:5px; text-transform:uppercase; font-size:11px; letter-spacing:.1em; }
+.fiche-slider { margin-bottom:14px; }
+.fiche-slider .ba-frame { aspect-ratio:4/5; }
+@media (min-width:720px) { .fiche-slider .ba-frame { aspect-ratio:16/11; } }
+.fiche-cols { display:grid; gap:clamp(22px,4vw,40px); margin-top:30px; }
+@media (min-width:820px) { .fiche-cols { grid-template-columns:1.25fr 1fr; align-items:start; } }
+.fiche-cols h3 { font-family:'Archivo'; font-weight:900; font-stretch:110%; text-transform:uppercase; font-size:17px; letter-spacing:.03em; margin-bottom:12px; }
+.fiche-desc p { margin-bottom:14px; font-size:15.5px; color:#33312D; }
+.travaux { list-style:none; background:var(--blanc); border:1px solid var(--ligne); border-radius:var(--r); padding:18px 18px; }
+.travaux li { display:flex; gap:11px; align-items:flex-start; padding:8px 0; font-size:14.5px; border-bottom:1px solid var(--ivoire); }
+.travaux li:last-child { border-bottom:none; }
+.travaux li::before { content:""; flex:0 0 18px; height:18px; margin-top:2px; border-radius:50%;
+  background:var(--or-clair) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="%231A1A1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/11px no-repeat; }
+.fiche-cta { margin-top:34px; background:var(--encre); color:var(--blanc); border-radius:var(--r); padding:clamp(22px,3.5vw,32px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; }
+.fiche-cta p { font-family:'Archivo'; font-weight:800; font-stretch:108%; font-size:clamp(16px,2.4vw,21px); max-width:32ch; line-height:1.25; }
+.fiche-cta p em { font-style:normal; color:var(--or-clair); }
+.fiche-nav { display:flex; justify-content:space-between; gap:12px; margin-top:26px; }
+.fiche-nav a { font-family:'Archivo'; font-weight:700; font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--encre);
+  text-decoration:none; background:var(--blanc); border:1.5px solid var(--ligne); border-radius:999px; padding:10px 16px; transition:all .15s ease; }
+.fiche-nav a:hover { border-color:var(--or); }
+.fiche-nav .empty { visibility:hidden; }
+
+footer { background:var(--encre); color:#B8B5AE; padding:clamp(32px,5vw,56px) clamp(16px,4vw,48px); border-top:1px solid rgba(201,169,110,.25); }
+.foot-inner { max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; gap:28px; justify-content:space-between; align-items:flex-start; }
+.foot-inner .logo { margin-bottom:8px; display:block; }
+footer p { font-size:14px; }
+footer a { color:var(--or-clair); text-decoration:none; }
+footer a:hover { text-decoration:underline; }
+.legal { font-size:12px; color:#7D7A73; margin-top:22px; }
+
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .card-anim { animation:none; }
+  .cta, .chip, }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <img class="logo-img" src="logo.png" alt="Logo RENOV HABITAT 33" width="42" height="42">
+    <span>Renov <b>Habitat</b> 33</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="realisations.html" class="actif">Réalisations</a>
+    <a href="services.html">Prestations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="cta" href="contact.html">Demander un devis</a>
+</header>
+
+<div id="accueil">
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Rénovation intérieure — Gironde (33)</span>
+    <h1>Glissez.<br>Comparez.<br><em>Jugez sur pièces.</em></h1>
+    <p class="sub">Peinture, plâtrerie, sols, murs : <strong>18 chantiers réels</strong>, photographiés avant et après nos interventions. Déplacez le curseur sur chaque photo pour révéler la transformation, ou ouvrez la fiche d'une réalisation pour le détail des travaux.</p>
+    <figure class="ba hero-ba card-anim" data-num="8" data-cat="couloir" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 8, couloir haussmannien" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-08-avant.jpg" alt="réalisation 8, couloir haussmannien — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-08-apres.jpg" alt="réalisation 8, couloir haussmannien — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-8"><span class="cap-text"><span class="cap-top"><span class="num">N°08</span> Couloir haussmannien — soubassements & parquet</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+    <p class="hint">↔ Faites glisser la poignée dorée, ou touchez la photo à l'endroit voulu</p>
+  </div>
+</section>
+
+<main>
+  <h2>Toutes nos réalisations</h2>
+  <div class="filters" role="group" aria-label="Filtrer par type de pièce"><button class="chip is-on" data-filter="all">Tout voir<i>17</i></button><button class="chip" data-filter="sdb">Salles de bain<i>6</i></button><button class="chip" data-filter="cuisine">Cuisines<i>3</i></button><button class="chip" data-filter="sejour">Pièces à vivre<i>5</i></button><button class="chip" data-filter="couloir">Couloirs & locaux<i>3</i></button></div>
+  <div class="grid" id="grid">
+<figure class="ba card-anim" data-num="1" data-cat="sdb" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 1, Salle de bain — douche & marbre" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-01-avant.jpg" alt="réalisation 1, Salle de bain — douche & marbre — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-01-apres.jpg" alt="réalisation 1, Salle de bain — douche & marbre — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-1"><span class="cap-text"><span class="cap-top"><span class="num">N°01</span> Salle de bain — douche & marbre</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="2" data-cat="couloir" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 2, Local commercial — salon de coiffure" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-02-avant.jpg" alt="réalisation 2, Local commercial — salon de coiffure — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-02-apres.jpg" alt="réalisation 2, Local commercial — salon de coiffure — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-2"><span class="cap-text"><span class="cap-top"><span class="num">N°02</span> Local commercial — salon de coiffure</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="3" data-cat="sejour" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 3, Séjour — remise à neuf complète" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-03-avant.jpg" alt="réalisation 3, Séjour — remise à neuf complète — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-03-apres.jpg" alt="réalisation 3, Séjour — remise à neuf complète — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-3"><span class="cap-text"><span class="cap-top"><span class="num">N°03</span> Séjour — remise à neuf complète</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="4" data-cat="cuisine" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 4, Cuisine — création complète" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-04-avant.jpg" alt="réalisation 4, Cuisine — création complète — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-04-apres.jpg" alt="réalisation 4, Cuisine — création complète — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-4"><span class="cap-text"><span class="cap-top"><span class="num">N°04</span> Cuisine — création complète</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="5" data-cat="sejour" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 5, Pièce technique — habillage & sol" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-05-avant.jpg" alt="réalisation 5, Pièce technique — habillage & sol — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-05-apres.jpg" alt="réalisation 5, Pièce technique — habillage & sol — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-5"><span class="cap-text"><span class="cap-top"><span class="num">N°05</span> Pièce technique — habillage & sol</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="6" data-cat="couloir" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 6, Couloir — sol coulé & peinture" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-06-avant.jpg" alt="réalisation 6, Couloir — sol coulé & peinture — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-06-apres.jpg" alt="réalisation 6, Couloir — sol coulé & peinture — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-6"><span class="cap-text"><span class="cap-top"><span class="num">N°06</span> Couloir — sol coulé & peinture</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="7" data-cat="sdb" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 7, Salle de bain — ambiance noire" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-07-avant.jpg" alt="réalisation 7, Salle de bain — ambiance noire — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-07-apres.jpg" alt="réalisation 7, Salle de bain — ambiance noire — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-7"><span class="cap-text"><span class="cap-top"><span class="num">N°07</span> Salle de bain — ambiance noire</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="8" data-cat="couloir" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 8, Couloir haussmannien — soubassements" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-08-avant.jpg" alt="réalisation 8, Couloir haussmannien — soubassements — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-08-apres.jpg" alt="réalisation 8, Couloir haussmannien — soubassements — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-8"><span class="cap-text"><span class="cap-top"><span class="num">N°08</span> Couloir haussmannien — soubassements</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="9" data-cat="sdb" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 9, Salle de bain — plafond vert profond" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-09-avant.jpg" alt="réalisation 9, Salle de bain — plafond vert profond — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-09-apres.jpg" alt="réalisation 9, Salle de bain — plafond vert profond — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-9"><span class="cap-text"><span class="cap-top"><span class="num">N°09</span> Salle de bain — plafond vert profond</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="10" data-cat="cuisine" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 10, Cuisine — plan de travail & façades" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-10-avant.jpg" alt="réalisation 10, Cuisine — plan de travail & façades — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-10-apres.jpg" alt="réalisation 10, Cuisine — plan de travail & façades — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-10"><span class="cap-text"><span class="cap-top"><span class="num">N°10</span> Cuisine — plan de travail & façades</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="11" data-cat="sejour" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 11, Pièce à vivre — escalier colimaçon" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-11-avant.jpg" alt="réalisation 11, Pièce à vivre — escalier colimaçon — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-11-apres.jpg" alt="réalisation 11, Pièce à vivre — escalier colimaçon — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-11"><span class="cap-text"><span class="cap-top"><span class="num">N°11</span> Pièce à vivre — escalier colimaçon</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="12" data-cat="sdb" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 12, Salle de bain — faïence & baignoire" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-12-avant.jpg" alt="réalisation 12, Salle de bain — faïence & baignoire — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-12-apres.jpg" alt="réalisation 12, Salle de bain — faïence & baignoire — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-12"><span class="cap-text"><span class="cap-top"><span class="num">N°12</span> Salle de bain — faïence & baignoire</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="13" data-cat="cuisine" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 13, Cuisine — rénovation intégrale" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-13-avant.jpg" alt="réalisation 13, Cuisine — rénovation intégrale — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-13-apres.jpg" alt="réalisation 13, Cuisine — rénovation intégrale — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-13"><span class="cap-text"><span class="cap-top"><span class="num">N°13</span> Cuisine — rénovation intégrale</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="14" data-cat="sdb" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 14, Salle d'eau — douche à l'italienne" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-14-avant.jpg" alt="réalisation 14, Salle d'eau — douche à l'italienne — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-14-apres.jpg" alt="réalisation 14, Salle d'eau — douche à l'italienne — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-14"><span class="cap-text"><span class="cap-top"><span class="num">N°14</span> Salle d'eau — douche à l'italienne</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="15" data-cat="sejour" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 15, Séjour — murs & parquet" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-15-avant.jpg" alt="réalisation 15, Séjour — murs & parquet — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-15-apres.jpg" alt="réalisation 15, Séjour — murs & parquet — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-15"><span class="cap-text"><span class="cap-top"><span class="num">N°15</span> Séjour — murs & parquet</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="16" data-cat="sdb" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 16, Salle de bain — colonne de douche" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-16-avant.jpg" alt="réalisation 16, Salle de bain — colonne de douche — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-16-apres.jpg" alt="réalisation 16, Salle de bain — colonne de douche — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-16"><span class="cap-text"><span class="cap-top"><span class="num">N°16</span> Salle de bain — colonne de douche</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+<figure class="ba card-anim" data-num="17" data-cat="sejour" tabindex="0" role="slider" aria-label="Comparateur avant après : réalisation 17, Séjour traversant — ouverture rénovée" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+  <div class="ba-frame">
+    <img class="ba-img ba-avant" src="realisation-17-avant.jpg" alt="réalisation 17, Séjour traversant — ouverture rénovée — avant travaux" draggable="false">
+    <img class="ba-img ba-apres" src="realisation-17-apres.jpg" alt="réalisation 17, Séjour traversant — ouverture rénovée — après travaux" draggable="false">
+    <span class="tag tag-avant">Avant</span>
+    <span class="tag tag-apres">Après</span>
+    <div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+  <figcaption class="card-cta-wrap"><a class="card-cta" href="#fiche-17"><span class="cap-text"><span class="cap-top"><span class="num">N°17</span> Séjour traversant — ouverture rénovée</span><span class="cap-sub">Voir le détail des travaux</span></span><span class="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></figcaption>
+</figure>
+  </div>
+</main>
+
+<section class="chantier">
+  <div class="chantier-inner">
+    <h2>Un chantier, <em>4 étapes</em></h2>
+    <p class="sub">Réalisation n°18 — création d'un plancher, cloisons isolées et verrière : l'évolution complète du chantier, de la structure aux finitions.</p>
+    <ol class="steps">
+<li class="step"><span class="step-badge">1</span><img src="chantier18-etape-1.jpg" alt="Étape 1 — Avant" loading="lazy" draggable="false"><p><strong>Avant</strong><br><span>Escalier existant et bibliothèque d'origine, avant ouverture du plancher.</span></p></li>
+<li class="step"><span class="step-badge">2</span><img src="chantier18-etape-2.jpg" alt="Étape 2 — Structure" loading="lazy" draggable="false"><p><strong>Structure</strong><br><span>Création de la structure porteuse en bois du nouveau plancher.</span></p></li>
+<li class="step"><span class="step-badge">3</span><img src="chantier18-etape-3.jpg" alt="Étape 3 — Plancher" loading="lazy" draggable="false"><p><strong>Plancher</strong><br><span>Pose du platelage et mise à niveau avec l'existant.</span></p></li>
+<li class="step"><span class="step-badge">4</span><img src="chantier18-etape-4.jpg" alt="Étape 4 — Cloisons & verrière" loading="lazy" draggable="false"><p><strong>Cloisons & verrière</strong><br><span>Cloisons isolées en laine de verre, ossature métallique et verrière atelier.</span></p></li>
+    </ol>
+  </div>
+</section>
+</div>
+
+<div id="fiche"><div class="fiche-wrap" id="fiche-content"></div></div>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <span class="logo" style="cursor:default"><img class="logo-img" src="logo.png" alt="" width="42" height="42">Renov <b>Habitat</b> 33</span>
+      <p>Peinture · Plâtrerie · Sols · Murs · Façades</p>
+      <p>Intervention dans toute la Gironde (33)</p>
+    </div>
+    <div class="foot-nav" style="display:flex;flex-direction:column;gap:6px">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Nos prestations</a>
+      <a href="contact.html">Contact & devis</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+    <div>
+      <p><a href="tel:+33626943994">06 26 94 39 94</a></p>
+      <p><a href="mailto:renov.habitat3324@gmail.com">renov.habitat3324@gmail.com</a></p>
+      <p class="legal">RENOV HABITAT — SIRET 882 330 947 00012</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var FICHES = {"1": {"titre": "Salle de bain — douche & marbre", "cat": "Salle de bain", "lieu": "Bordeaux (33)", "duree": "2 semaines", "surface": "4 m²", "desc": ["Cette salle de bain a été entièrement créée à partir d'un volume brut : cloisons en plaques de plâtre hydrofuges posées, réseaux en attente, tout restait à faire. L'objectif du client : un espace lumineux, facile à entretenir, avec une vraie douche fermée malgré la petite surface.", "Nous avons habillé l'ensemble des murs en panneaux effet marbre blanc veiné, posé un receveur extra-plat avec paroi coulissante, et installé un meuble vasque suspendu pour dégager le sol. La niche murale existante a été conservée et intégrée dans l'habillage pour le rangement."], "travaux": ["Cloisonnement en plaques hydrofuges et bandes", "Habillage mural effet marbre toute hauteur", "Pose d'un receveur extra-plat et paroi de douche coulissante", "Installation du meuble vasque suspendu et du miroir", "Pose du sol vinyle anthracite", "Finitions, joints et silicones"]}, "2": {"titre": "Local commercial — salon de coiffure", "cat": "Couloir & local", "lieu": "Bordeaux (33)", "duree": "3 semaines", "surface": "45 m²", "desc": ["Transformation d'un local commercial brut en salon de coiffure prêt à ouvrir. Le local disposait déjà de son faux plafond avec spots, mais tout le reste était à créer : sols, murs, ambiance.", "Nous avons posé un parquet stratifié chêne naturel sur toute la surface, repris l'ensemble des murs en peinture blanche satinée lessivable (indispensable pour un usage professionnel), et accompagné le client jusqu'à l'installation de son mobilier de coiffure."], "travaux": ["Préparation et ragréage du support", "Pose de parquet stratifié chêne sur 45 m²", "Mise en peinture complète des murs et boiseries", "Reprises de plâtrerie autour des ouvertures", "Plinthes assorties et finitions", "Nettoyage de fin de chantier avant installation du mobilier"]}, "3": {"titre": "Séjour — remise à neuf complète", "cat": "Pièce à vivre", "lieu": "Talence (33)", "duree": "2 semaines", "surface": "28 m²", "desc": ["Ce séjour d'une maison de ville avait beaucoup vécu : murs verts défraîchis, escalier bois sombre, plancher terni. Le client souhaitait un espace clair et contemporain sans perdre le cachet du parquet ancien.", "Les murs et plafonds ont été entièrement repris en blanc lumineux, l'escalier a été remplacé par une structure métal et bois assumée, et le parquet d'origine a été poncé puis vitrifié pour retrouver tout son éclat."], "travaux": ["Protection du chantier et dépose des revêtements muraux", "Rebouchage, enduit et ponçage des murs", "Peinture murs et plafonds en blanc satiné", "Ponçage et vitrification du parquet d'origine", "Mise en peinture des menuiseries", "Finitions et raccords après pose du nouvel escalier"]}, "4": {"titre": "Cuisine — création complète", "cat": "Cuisine", "lieu": "Mérignac (33)", "duree": "3 semaines", "surface": "12 m²", "desc": ["Cette cuisine des années 70 — murs jaunis, faïence datée, plan de travail fatigué — a été entièrement déposée pour repartir sur une base saine.", "Après dépose et reprise des murs, nous avons posé un parquet stratifié, installé une cuisine équipée aux façades gris anthracite avec plan de travail assorti, et repris toute la pièce en peinture claire pour maximiser la lumière du couloir attenant."], "travaux": ["Dépose complète de l'ancienne cuisine et de la faïence", "Reprise des murs en enduit et peinture", "Pose du sol stratifié", "Installation de la cuisine équipée et de l'électroménager", "Crédence et joints d'étanchéité", "Retouches peinture et finitions"]}, "5": {"titre": "Pièce technique — habillage & sol", "cat": "Pièce à vivre", "lieu": "Pessac (33)", "duree": "1 semaine", "surface": "6 m²", "desc": ["Cet espace technique attenant à la cuisine était resté à l'état brut : murs en béton, gaines apparentes, sol en ciment. L'enjeu : l'intégrer visuellement au reste de la maison tout en gardant l'accès aux réseaux.", "Les murs ont été doublés et enduits, puis mis en peinture avec un soubassement vert sauge qui fait écho à la porte existante. Un sol stratifié chêne clair unifie l'ensemble avec les pièces voisines, et les gaines ont été habillées proprement."], "travaux": ["Doublage et enduit des murs bruts", "Peinture bi-ton avec soubassement vert sauge", "Habillage des gaines et réseaux apparents", "Peinture du plafond et des poutres en blanc", "Pose du sol stratifié chêne clair", "Plinthes et finitions"]}, "6": {"titre": "Couloir — sol coulé & peinture", "cat": "Couloir & local", "lieu": "Bègles (33)", "duree": "1 semaine", "surface": "14 m²", "desc": ["Ce couloir de distribution venait de recevoir sa chape de ragréage : restait à transformer cet espace de passage brut en circulation chaleureuse et résistante.", "Une fois la chape sèche, nous avons posé un sol stratifié chêne clair adapté au passage intensif, repris les murs et plafonds en blanc, et soigné les seuils de chaque porte pour des transitions nettes entre les pièces."], "travaux": ["Contrôle et préparation de la chape de ragréage", "Pose de sol stratifié spécial passage intensif", "Peinture des murs et plafonds", "Mise en peinture des portes et encadrements", "Barres de seuil et plinthes", "Pose du luminaire de circulation"]}, "7": {"titre": "Salle de bain — ambiance noire", "cat": "Salle de bain", "lieu": "Bordeaux (33)", "duree": "2 semaines", "surface": "5 m²", "desc": ["Un parti pris audacieux pour cette salle de bain bordelaise : passer d'une base carrelée blanche classique à une ambiance noire mate, profonde et contemporaine.", "Les murs ont été repris en enduit décoratif noir mat au-dessus de la faïence métro conservée en partie basse, la baignoire a été remplacée par un modèle à habillage noir, et l'éclairage repensé pour valoriser les contrastes. Le voile de la fenêtre préserve l'intimité sans bloquer la lumière."], "travaux": ["Protection de la faïence métro conservée", "Application d'un enduit décoratif noir mat", "Remplacement et habillage de la baignoire", "Peinture du plafond et des rails techniques", "Reprise des joints et étanchéité", "Installation des appliques et finitions"]}, "8": {"titre": "Couloir haussmannien — soubassements", "cat": "Couloir & local", "lieu": "Bordeaux (33)", "duree": "3 semaines", "surface": "18 m²", "desc": ["Le chantier signature de cette sélection : un couloir d'appartement ancien, plafonds hauts et moulures d'origine, qui méritait une rénovation à la hauteur de son cachet.", "Les soubassements à panneaux ont été restaurés puis peints en gris taupe, les murs remis à neuf en blanc cassé, et les pièces attenantes traitées en couleurs franches — terracotta et jaune ocre — qui se répondent d'un bout à l'autre du couloir. Un parquet chêne massif à larges lames vient couronner l'ensemble."], "travaux": ["Restauration des soubassements et moulures d'origine", "Enduit et ponçage des murs toute hauteur", "Peinture des soubassements en gris taupe", "Mise en couleur des pièces attenantes (terracotta, ocre)", "Pose de parquet chêne massif larges lames", "Peinture des plafonds et corniches"]}, "9": {"titre": "Salle de bain — plafond vert profond", "cat": "Salle de bain", "lieu": "Cenon (33)", "duree": "2 semaines", "surface": "6 m²", "desc": ["Cette salle de bain fonctionnelle mais datée — murs orange et vert anis — avait besoin d'une identité plus élégante sans tout démolir : la faïence métro blanche, en bon état, méritait d'être conservée.", "Le plafond et les hauts de murs ont été repris dans un vert forêt profond qui met en valeur la faïence blanche, un meuble vasque en bois clair a remplacé l'ancien lavabo, et un sol vinyle imitation bois réchauffe l'ensemble. Une paroi de douche vitrée complète la baignoire existante."], "travaux": ["Conservation et protection de la faïence métro", "Peinture plafond et hauts de murs en vert forêt", "Remplacement du meuble vasque", "Pose d'un sol vinyle imitation bois", "Installation d'une paroi de douche vitrée", "Suspension luminaire et finitions"]}, "10": {"titre": "Cuisine — plan de travail & façades", "cat": "Cuisine", "lieu": "Villenave-d'Ornon (33)", "duree": "1 semaine", "surface": "9 m²", "desc": ["Rafraîchissement complet de cette cuisine sans toucher à son implantation : l'objectif était un résultat spectaculaire avec un budget maîtrisé.", "L'ancien meuble sous évier a laissé place à une ligne de meubles blancs à façades lisses avec plan de travail noir mat, la faïence a été conservée et rejointoyée, et un sol stratifié chêne remplace le carrelage marron d'origine. Le contraste noir et blanc structure la pièce."], "travaux": ["Dépose de l'ancien meuble et de l'évier", "Pose de la nouvelle ligne de meubles et du plan de travail noir", "Raccordement de l'évier et de la plaque", "Rejointoiement de la faïence existante", "Pose du sol stratifié chêne", "Meuble haut et finitions"]}, "11": {"titre": "Pièce à vivre — escalier colimaçon", "cat": "Pièce à vivre", "lieu": "Lormont (33)", "duree": "2 semaines", "surface": "20 m²", "desc": ["Cette pièce à vivre organisée autour d'un bel escalier colimaçon en bois était restée en plâtre brut, sol carrelé ancien et câbles apparents.", "Nous avons créé une niche TV peinte en gris contrasté, repris tous les murs en blanc, posé un sol stratifié chêne clair et remis en valeur l'escalier dont la rampe a été rechampie. Le résultat : un espace prêt à vivre qui met le colimaçon en scène."], "travaux": ["Enduit et ponçage des murs en plâtre brut", "Création et peinture de la niche TV", "Peinture générale murs et plafonds", "Dépose de l'ancien carrelage et pose du stratifié", "Rechampissage de la rampe d'escalier", "Passage des câbles et finitions"]}, "12": {"titre": "Salle de bain — faïence & baignoire", "cat": "Salle de bain", "lieu": "Gradignan (33)", "duree": "2 semaines", "surface": "7 m²", "desc": ["Cette salle de bain rose des années 80, encombrée et sombre malgré sa grande fenêtre, a été repensée de fond en comble pour une famille.", "Faïence grand format beige sable, baignoire neuve avec tablier carrelé, meuble vasque et emplacement lave-linge intégré : la pièce a été rationalisée pour offrir plus de rangement et un entretien facile, en profitant enfin de la lumière de la fenêtre sur jardin."], "travaux": ["Dépose complète de la faïence rose et des sanitaires", "Reprise des murs et étanchéité", "Pose de faïence grand format beige sable", "Installation de la baignoire et de son tablier", "Meuble vasque et emplacement lave-linge", "Peinture plafond et finitions"]}, "13": {"titre": "Cuisine — rénovation intégrale", "cat": "Cuisine", "lieu": "Saint-Médard-en-Jalles (33)", "duree": "3 semaines", "surface": "11 m²", "desc": ["Cuisine d'origine des années 60 : faïence jaune, chauffe-eau apparent, sol en mosaïque. Une rénovation intégrale s'imposait pour ce bien destiné à la location.", "Après curage complet, la pièce a reçu une cuisine équipée gris perle avec plan de travail bois, four encastré et hotte intégrée. La chaudière a été réintégrée dans un meuble haut assorti, les murs repris en blanc et le sol remplacé par un stratifié clair."], "travaux": ["Curage complet de l'ancienne cuisine", "Reprise des murs, enduit et peinture", "Pose de la cuisine équipée gris perle", "Intégration de la chaudière dans le meuble haut", "Pose du sol stratifié clair", "Crédence, joints et finitions"]}, "14": {"titre": "Salle d'eau — douche à l'italienne", "cat": "Salle de bain", "lieu": "Eysines (33)", "duree": "2 semaines", "surface": "4 m²", "desc": ["Cette petite pièce d'eau aux murs abîmés a été transformée en salle d'eau contemporaine avec douche à l'italienne de plain-pied.", "Carrelage grand format blanc du sol au plafond, receveur intégré au sol avec caniveau, et sèche-serviettes noir mat conservé comme élément graphique : chaque centimètre a été optimisé pour un usage quotidien confortable."], "travaux": ["Piquage et reprise des murs dégradés", "Étanchéité complète sous carrelage", "Création de la douche à l'italienne avec caniveau", "Pose de carrelage grand format toute hauteur", "Repose du sèche-serviettes noir", "Joints, silicone et finitions"]}, "15": {"titre": "Séjour — murs & parquet", "cat": "Pièce à vivre", "lieu": "Le Bouscat (33)", "duree": "2 semaines", "surface": "24 m²", "desc": ["Ce séjour aux murs jaune soutenu et au sol en tomettes anciennes devait redevenir neutre et lumineux avant la mise en vente du bien.", "L'ensemble des murs et plafonds a été repris en blanc après rebouchage, et les tomettes ont été recouvertes d'un sol stratifié chêne posé sur sous-couche adaptée. Le bien a trouvé preneur dans le mois suivant les travaux."], "travaux": ["Protection et rebouchage des murs", "Peinture blanche murs et plafonds (2 couches)", "Sous-couche d'isolation phonique", "Pose de sol stratifié chêne sur les tomettes", "Plinthes et barres de seuil", "Nettoyage de fin de chantier"]}, "16": {"titre": "Salle de bain — colonne de douche", "cat": "Salle de bain", "lieu": "Bruges (33)", "duree": "2 semaines", "surface": "5 m²", "desc": ["Murs à nu, faïence arrachée, baignoire d'origine : cette salle de bain était au point zéro. Le client voulait du blanc, du net, et une touche noire.", "Faïence blanche grand format autour de la baignoire conservée et rénovée, colonne de douche noire thermostatique, hublot lumineux : la pièce est repartie sur des bases saines avec une étanchéité refaite intégralement."], "travaux": ["Dépose des restes de faïence et préparation des murs", "Étanchéité périphérique de la baignoire", "Pose de faïence blanche grand format", "Installation de la colonne de douche noire", "Rénovation de la baignoire existante", "Peinture, joints et finitions"]}, "17": {"titre": "Séjour traversant — ouverture rénovée", "cat": "Pièce à vivre", "lieu": "Ambarès-et-Lagrave (33)", "duree": "2 semaines", "surface": "32 m²", "desc": ["Cette enfilade de deux pièces reliées par une large ouverture cumulait murs jaunes, cheminée condamnée et maçonnerie apparente côté salon.", "Les deux pièces ont été traitées d'un seul geste : reprise complète des murs (rebouchage de la cheminée comprise), peinture blanche unifiante et sol stratifié chêne posé en continu à travers l'ouverture pour agrandir visuellement l'espace traversant."], "travaux": ["Rebouchage de la cheminée et reprise de maçonnerie", "Enduit et ponçage des deux pièces", "Peinture blanche en continu sur l'enfilade", "Pose du sol stratifié traversant sans rupture", "Encadrement de l'ouverture repeint", "Plinthes et finitions"]}};
+
+function initSlider(fig) {
+  var frame = fig.querySelector('.ba-frame');
+  var apres = fig.querySelector('.ba-apres');
+  var handle = fig.querySelector('.ba-handle');
+  var pos = 50, dragging = false;
+  function render() {
+    apres.style.clipPath = 'inset(0 0 0 ' + pos + '%)';
+    handle.style.left = pos + '%';
+    fig.setAttribute('aria-valuenow', Math.round(pos));
+  }
+  function setFromX(x) {
+    var r = frame.getBoundingClientRect();
+    pos = Math.min(100, Math.max(0, (x - r.left) / r.width * 100));
+    render();
+  }
+  frame.addEventListener('pointerdown', function(e) { dragging = true; frame.setPointerCapture(e.pointerId); setFromX(e.clientX); });
+  frame.addEventListener('pointermove', function(e) { if (dragging) setFromX(e.clientX); });
+  frame.addEventListener('pointerup', function() { dragging = false; });
+  frame.addEventListener('pointercancel', function() { dragging = false; });
+  fig.addEventListener('keydown', function(e) {
+    var step = e.shiftKey ? 10 : 4;
+    if (e.key === 'ArrowLeft') { pos = Math.max(0, pos - step); render(); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { pos = Math.min(100, pos + step); render(); e.preventDefault(); }
+    if (e.key === 'Home') { pos = 0; render(); e.preventDefault(); }
+    if (e.key === 'End') { pos = 100; render(); e.preventDefault(); }
+  });
+}
+document.querySelectorAll('.ba').forEach(initSlider);
+
+var chips = document.querySelectorAll('.chip');
+chips.forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    chips.forEach(function(c) { c.classList.remove('is-on'); });
+    chip.classList.add('is-on');
+    var f = chip.dataset.filter;
+    document.querySelectorAll('#grid .ba').forEach(function(card) {
+      var show = (f === 'all' || card.dataset.cat === f);
+      card.classList.toggle('is-hidden', !show);
+      if (show) { card.classList.remove('card-anim'); void card.offsetWidth; card.classList.add('card-anim'); }
+    });
+  });
+});
+
+var NUMS = Object.keys(FICHES).map(Number).sort(function(a,b){return a-b;});
+
+function renderFiche(num) {
+  var d = FICHES[num];
+  var srcCard = document.querySelector('#grid .ba[data-num="' + num + '"]') || document.querySelector('.hero-ba[data-num="' + num + '"]');
+  if (!d || !srcCard) return false;
+  var avSrc = srcCard.querySelector('.ba-avant').src;
+  var apSrc = srcCard.querySelector('.ba-apres').src;
+  var i = NUMS.indexOf(num);
+  var prev = i > 0 ? NUMS[i-1] : null;
+  var next = i < NUMS.length-1 ? NUMS[i+1] : null;
+  var html = '' +
+  '<a class="back" href="#realisations">← Toutes les réalisations</a>' +
+  '<span class="fiche-eyebrow">Réalisation n°' + String(num).padStart(2,'0') + ' — ' + d.cat + '</span>' +
+  '<h1>' + d.titre + '</h1>' +
+  '<div class="meta">' +
+    '<span><b>Lieu</b>' + d.lieu + '</span>' +
+    '<span><b>Durée</b>' + d.duree + '</span>' +
+    '<span><b>Surface</b>' + d.surface + '</span>' +
+  '</div>' +
+  '<figure class="ba fiche-slider" role="slider" tabindex="0" aria-label="Comparateur avant après" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">' +
+    '<div class="ba-frame">' +
+      '<img class="ba-img ba-avant" src="' + avSrc + '" alt="Avant travaux" draggable="false">' +
+      '<img class="ba-img ba-apres" src="' + apSrc + '" alt="Après travaux" draggable="false">' +
+      '<span class="tag tag-avant">Avant</span><span class="tag tag-apres">Après</span>' +
+      '<div class="ba-handle"><span class="ba-line"></span><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M8.5 5 2 12l6.5 7M15.5 5 22 12l-6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>' +
+    '</div>' +
+  '</figure>' +
+  '<p class="hint">↔ Faites glisser pour comparer l\'avant et l\'après</p>' +
+  '<div class="fiche-cols">' +
+    '<div class="fiche-desc"><h3>Le projet</h3>' + d.desc.map(function(p){return '<p>'+p+'</p>';}).join('') + '</div>' +
+    '<div><h3>Travaux réalisés</h3><ul class="travaux">' + d.travaux.map(function(t){return '<li>'+t+'</li>';}).join('') + '</ul></div>' +
+  '</div>' +
+  '<div class="fiche-cta"><p>Un projet similaire ? <em>Parlons-en.</em></p><a class="cta" href="mailto:renov.habitat3324@gmail.com?subject=Demande%20de%20devis%20—%20projet%20type%20réalisation%20n°' + num + '">Demander un devis</a></div>' +
+  '<div class="fiche-nav">' +
+    (prev ? '<a href="#fiche-' + prev + '">← Réalisation n°' + String(prev).padStart(2,'0') + '</a>' : '<a class="empty">.</a>') +
+    (next ? '<a href="#fiche-' + next + '">Réalisation n°' + String(next).padStart(2,'0') + ' →</a>' : '<a class="empty">.</a>') +
+  '</div>';
+  var box = document.getElementById('fiche-content');
+  box.innerHTML = html;
+  initSlider(box.querySelector('.ba'));
+  return true;
+}
+
+function route() {
+  var m = location.hash.match(/^#fiche-(\d+)$/);
+  if (m && renderFiche(parseInt(m[1], 10))) {
+    document.body.classList.add('mode-fiche');
+    window.scrollTo(0, 0);
+    document.title = 'Réalisation n°' + m[1] + ' — RENOV HABITAT 33';
+  } else {
+    document.body.classList.remove('mode-fiche');
+    document.title = 'RENOV HABITAT 33 — Nos réalisations avant / après';
+    if (location.hash === '#realisations') {
+      var g = document.getElementById('grid');
+      if (g) g.scrollIntoView();
+    }
+  }
+}
+window.addEventListener('hashchange', route);
+
+route();
+</script>
+</body>
+</html>

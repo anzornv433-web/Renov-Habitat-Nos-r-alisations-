@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos prestations — RENOV HABITAT 33 | Peinture, plâtrerie, sols en Gironde</title>
+<meta name="description" content="Peinture intérieure, plâtrerie et cloisons, pose de sols, revêtements muraux et façades en Gironde. Pour particuliers, agences immobilières et syndics. Devis gratuit.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* --- styles propres à la page prestations --- */
+.presta { display: grid; gap: clamp(18px, 3vw, 28px); margin-top: 30px; }
+.presta-item {
+  background: var(--blanc); border: 1px solid var(--ligne); border-radius: var(--r);
+  padding: clamp(20px, 3.4vw, 32px);
+  display: grid; gap: 18px;
+  box-shadow: 0 1px 2px rgba(26,26,26,.05), 0 12px 32px -20px rgba(26,26,26,.2);
+}
+@media (min-width: 860px) { .presta-item { grid-template-columns: 1.2fr 1fr; align-items: start; } }
+.presta-item h3 { font-size: clamp(18px, 2.4vw, 22px); }
+.presta-item .desc p { font-size: 15px; color: var(--pierre); margin-bottom: 10px; }
+.inclus { list-style: none; background: var(--ivoire); border-radius: 10px; padding: 16px 16px; }
+.inclus li { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: 14px; }
+.inclus li::before {
+  content: ""; flex: 0 0 17px; height: 17px; margin-top: 2px; border-radius: 50%;
+  background: var(--or-clair) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="%231A1A1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/10px no-repeat;
+}
+.inclus b { font-family: 'Archivo'; font-weight: 800; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--or); display: block; margin-bottom: 6px; }
+
+.publics { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 26px; }
+.publics .carte h3 { font-size: 15.5px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="index.html">
+    <img src="logo.png" alt="Logo RENOV HABITAT 33" width="40" height="40">
+    <span>Renov <b>Habitat</b> 33</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="realisations.html">Réalisations</a>
+    <a href="services.html" class="actif">Prestations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="btn btn-or" href="tel:+33626943994">
+    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" fill="currentColor"/></svg>
+    06 26 94 39 94
+  </a>
+</nav>
+
+<header class="section-sombre">
+  <div class="section-inner">
+    <span class="eyebrow">Nos prestations</span>
+    <h1>Ce que nous <em>savons faire</em></h1>
+    <p class="sub">Cinq métiers complémentaires pour prendre en charge votre rénovation intérieure de bout en bout — avec un seul devis, un seul planning et un seul responsable de chantier.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="presta">
+
+    <article class="presta-item" id="peinture">
+      <div class="desc">
+        <h3>Peinture intérieure</h3>
+        <p>La peinture, c'est 80 % de préparation : rebouchage, enduit, ponçage. Peintures professionnelles satinées ou mates, lessivables pour les pièces de passage, conseil sur les teintes inclus.</p>
+      </div>
+      <ul class="inclus"><b>Compris dans la prestation</b>
+        <li>Protection complète des sols et du mobilier</li>
+        <li>Rebouchage, enduit et ponçage des supports</li>
+        <li>Sous-couche + deux couches de finition</li>
+        <li>Boiseries, portes et plinthes sur demande</li>
+        <li>Nettoyage de fin de chantier</li>
+      </ul>
+    </article>
+
+    <article class="presta-item" id="platrerie">
+      <div class="desc">
+        <h3>Plâtrerie & cloisons</h3>
+        <p>Créer une chambre, ouvrir un séjour, doubler un mur froid, rattraper un plafond : cloisons et doublages en plaques de plâtre, isolation intégrée si besoin, supports livrés prêts à peindre.</p>
+      </div>
+      <ul class="inclus"><b>Compris dans la prestation</b>
+        <li>Cloisons de distribution et doublages</li>
+        <li>Faux plafonds et soffites</li>
+        <li>Isolation thermique et phonique intégrée</li>
+        <li>Bandes, enduits et ponçage prêt à peindre</li>
+        <li>Plaques hydrofuges en pièces humides</li>
+      </ul>
+    </article>
+
+    <article class="presta-item" id="sols">
+      <div class="desc">
+        <h3>Sols</h3>
+        <p>Du ragréage à la plinthe : parquet ou stratifié dans les pièces de vie, vinyle ou carrelage dans les pièces d'eau, et rénovation de parquets anciens par ponçage et vitrification.</p>
+      </div>
+      <ul class="inclus"><b>Compris dans la prestation</b>
+        <li>Dépose de l'ancien revêtement si nécessaire</li>
+        <li>Ragréage et préparation du support</li>
+        <li>Pose parquet, stratifié, vinyle ou carrelage</li>
+        <li>Ponçage et vitrification de parquets anciens</li>
+        <li>Plinthes et barres de seuil assorties</li>
+      </ul>
+    </article>
+
+    <article class="presta-item" id="murs">
+      <div class="desc">
+        <h3>Revêtements muraux</h3>
+        <p>L'habillage qui donne son caractère à une pièce : faïence en cuisine et salle de bain, papier peint, panneaux décoratifs, soubassements et moulures — y compris sur supports anciens.</p>
+      </div>
+      <ul class="inclus"><b>Compris dans la prestation</b>
+        <li>Faïence murale, toute hauteur ou crédence</li>
+        <li>Papier peint et panneaux décoratifs</li>
+        <li>Soubassements et moulures</li>
+        <li>Étanchéité sous carrelage en pièces d'eau</li>
+        <li>Joints et finitions silicone</li>
+      </ul>
+    </article>
+
+    <article class="presta-item" id="facades">
+      <div class="desc">
+        <h3>Façades</h3>
+        <p>Nettoyage, traitement des fissures et mise en peinture de façades de maisons et petits immeubles, après diagnostic des supports.</p>
+      </div>
+      <ul class="inclus"><b>Compris dans la prestation</b>
+        <li>Nettoyage et préparation des supports</li>
+        <li>Traitement des fissures et reprises</li>
+        <li>Peintures façade adaptées au support</li>
+        <li>Protection des menuiseries et abords</li>
+        <li>Remise en état des abords en fin de chantier</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<section class="section-sombre">
+  <div class="section-inner">
+    <span class="eyebrow">Pour qui</span>
+    <h2>Particuliers, agences, <em>syndics</em></h2>
+    <div class="publics">
+      <div class="carte" style="background:var(--encre-2); border-color:rgba(201,169,110,.22)">
+        <h3 style="color:var(--blanc)">Particuliers</h3>
+        <p style="color:#B8B5AE">Rafraîchir avant d'emménager, rénover une pièce d'eau, remettre au goût du jour : nous adaptons le chantier à votre vie quotidienne.</p>
+      </div>
+      <div class="carte" style="background:var(--encre-2); border-color:rgba(201,169,110,.22)">
+        <h3 style="color:var(--blanc)">Agences immobilières</h3>
+        <p style="color:#B8B5AE">Remise en état entre deux locations ou avant mise en vente, délais tenus et interlocuteur unique : nous travaillons régulièrement avec les professionnels de l'immobilier.</p>
+      </div>
+      <div class="carte" style="background:var(--encre-2); border-color:rgba(201,169,110,.22)">
+        <h3 style="color:var(--blanc)">Syndics & bailleurs</h3>
+        <p style="color:#B8B5AE">Parties communes, logements locatifs, interventions planifiées : devis détaillés et attestations d'assurance fournies systématiquement.</p>
+      </div>
+    </div>
+    <div class="badges" style="margin-top:26px">
+      <span class="badge"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1.2 13.6L7.6 12.4l1.4-1.4 1.8 1.8 4.2-4.2 1.4 1.4-5.6 5.6Z" fill="currentColor"/></svg> Assurance décennale — attestation sur demande</span>
+      <span class="badge">Responsabilité civile professionnelle</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-bloc">
+    <p>Décrivez-nous votre projet, <em>on chiffre sous 48 h.</em></p>
+    <div class="cta-actions">
+      <a class="btn btn-or" href="tel:+33626943994">06 26 94 39 94</a>
+      <a class="btn btn-contour" href="contact.html">Demander un devis</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <a class="logo" href="index.html">
+        <img src="logo.png" alt="" width="40" height="40">
+        <span>Renov <b>Habitat</b> 33</span>
+      </a>
+      <p>Peinture · Plâtrerie · Sols · Murs · Façades</p>
+      <p>Intervention dans toute la Gironde (33)</p>
+    </div>
+    <div class="foot-nav">
+      <a href="realisations.html">Nos réalisations</a>
+      <a href="services.html">Nos prestations</a>
+      <a href="contact.html">Contact & devis</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+    <div>
+      <p><a href="tel:+33626943994">06 26 94 39 94</a></p>
+      <p><a href="mailto:renov.habitat3324@gmail.com">renov.habitat3324@gmail.com</a></p>
+    </div>
+    <p class="legal">RENOV HABITAT — SIRET 882 330 947 00012 — Assurance décennale et responsabilité civile professionnelle.</p>
+  </div>
+</footer>
+
+</body>
+</html>

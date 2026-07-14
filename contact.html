@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & devis gratuit — RENOV HABITAT 33 | Rénovation en Gironde</title>
+<meta name="description" content="Demandez votre devis gratuit de rénovation intérieure en Gironde : 06 26 94 39 94 ou via notre formulaire. Réponse sous 48 h.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* --- styles propres à la page contact --- */
+.contact-grid { display: grid; gap: clamp(22px, 4vw, 40px); margin-top: 8px; }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1.15fr; align-items: start; } }
+
+.coordonnees { display: grid; gap: 14px; }
+.coord {
+  background: var(--blanc); border: 1px solid var(--ligne); border-radius: var(--r);
+  padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start;
+  text-decoration: none; color: var(--encre);
+  transition: border-color .15s ease, transform .15s ease;
+}
+a.coord:hover { border-color: var(--or); transform: translateY(-1px); }
+.coord-icone {
+  flex: 0 0 42px; height: 42px; border-radius: 10px;
+  background: var(--encre); color: var(--or-clair); display: grid; place-items: center;
+}
+.coord b { font-family: 'Archivo'; font-weight: 800; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--or); display: block; }
+.coord span { font-size: 15.5px; font-weight: 600; word-break: break-word; }
+.coord small { display: block; font-size: 13px; color: var(--pierre); font-weight: 400; }
+
+.formulaire {
+  background: var(--blanc); border: 1px solid var(--ligne); border-radius: var(--r);
+  padding: clamp(20px, 3.4vw, 30px);
+  box-shadow: 0 1px 2px rgba(26,26,26,.05), 0 12px 32px -20px rgba(26,26,26,.2);
+}
+.champ { margin-bottom: 16px; }
+.champ label {
+  display: block; font-family: 'Archivo'; font-weight: 700; font-size: 12.5px;
+  letter-spacing: .07em; text-transform: uppercase; margin-bottom: 6px;
+}
+.champ label i { font-style: normal; color: var(--or); }
+.champ input, .champ select, .champ textarea {
+  width: 100%; font-family: 'Inter', sans-serif; font-size: 15px;
+  padding: 12px 14px; border: 1.5px solid var(--ligne); border-radius: 10px;
+  background: var(--ivoire); color: var(--encre);
+}
+.champ input:focus, .champ select:focus, .champ textarea:focus {
+  outline: none; border-color: var(--or); background: var(--blanc);
+}
+.champ textarea { min-height: 130px; resize: vertical; }
+.deux-cols { display: grid; gap: 0 14px; }
+@media (min-width: 560px) { .deux-cols { grid-template-columns: 1fr 1fr; } }
+.form-note { font-size: 12.5px; color: var(--pierre); margin: 4px 0 16px; }
+.btn-envoyer { width: 100%; justify-content: center; font-size: 14px; padding: 14px 20px; }
+.form-msg { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 10px; font-size: 14.5px; font-weight: 500; }
+.form-msg.ok { display: block; background: #E7F3EA; color: #1E5A31; border: 1px solid #BBDDC4; }
+.form-msg.erreur { display: block; background: #FBEAEA; color: #8A2A2A; border: 1px solid #EFC7C7; }
+.gotcha { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="index.html">
+    <img src="logo.png" alt="Logo RENOV HABITAT 33" width="40" height="40">
+    <span>Renov <b>Habitat</b> 33</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="realisations.html">Réalisations</a>
+    <a href="services.html">Prestations</a>
+    <a href="contact.html" class="actif">Contact</a>
+  </div>
+  <a class="btn btn-or" href="tel:+33626943994">
+    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" fill="currentColor"/></svg>
+    06 26 94 39 94
+  </a>
+</nav>
+
+<header class="section-sombre">
+  <div class="section-inner">
+    <span class="eyebrow">Contact & devis</span>
+    <h1>Parlez-nous de <em>votre projet</em></h1>
+    <p class="sub">Par téléphone, par email ou via le formulaire : décrivez-nous votre chantier et nous revenons vers vous <strong>sous 48 h</strong> avec les prochaines étapes. La visite et le devis sont gratuits et sans engagement.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="contact-grid">
+
+    <div class="coordonnees">
+      <a class="coord" href="tel:+33626943994">
+        <span class="coord-icone"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z" fill="currentColor"/></svg></span>
+        <span><b>Téléphone</b><span>06 26 94 39 94</span><small>Le plus rapide — laissez un message si chantier en cours, on rappelle.</small></span>
+      </a>
+      <a class="coord" href="mailto:renov.habitat3324@gmail.com">
+        <span class="coord-icone"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Zm8 7L4 6v12h16V6l-8 5Z" fill="currentColor"/></svg></span>
+        <span><b>Email</b><span>renov.habitat3324@gmail.com</span><small>Joignez des photos de l'existant, ça accélère le chiffrage.</small></span>
+      </a>
+      <div class="coord">
+        <span class="coord-icone"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" fill="currentColor"/></svg></span>
+        <span><b>Zone d'intervention</b><span>Bordeaux & toute la Gironde (33)</span><small>Déplacement gratuit pour la visite de chiffrage.</small></span>
+      </div>
+      <div class="coord">
+        <span class="coord-icone"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1.2 13.6L7.6 12.4l1.4-1.4 1.8 1.8 4.2-4.2 1.4 1.4-5.6 5.6Z" fill="currentColor"/></svg></span>
+        <span><b>Garanties</b><span>Assurance décennale & RC pro</span><small>Attestations fournies avec chaque devis.</small></span>
+      </div>
+    </div>
+
+    <form class="formulaire" id="form-devis" action="https://formspree.io/f/xgogebpd" method="POST" novalidate>
+      <div class="deux-cols">
+        <div class="champ">
+          <label for="nom">Nom <i>*</i></label>
+          <input type="text" id="nom" name="Nom" required autocomplete="name">
+        </div>
+        <div class="champ">
+          <label for="tel">Téléphone <i>*</i></label>
+          <input type="tel" id="tel" name="Téléphone" required autocomplete="tel">
+        </div>
+      </div>
+      <div class="deux-cols">
+        <div class="champ">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+        </div>
+        <div class="champ">
+          <label for="commune">Commune du chantier</label>
+          <input type="text" id="commune" name="Commune" placeholder="Ex. : Bordeaux, Pessac…">
+        </div>
+      </div>
+      <div class="champ">
+        <label for="type">Type de projet</label>
+        <select id="type" name="Type de projet">
+          <option>Peinture</option>
+          <option>Salle de bain</option>
+          <option>Cuisine</option>
+          <option>Sols</option>
+          <option>Plâtrerie / cloisons</option>
+          <option>Façade</option>
+          <option>Rénovation complète</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="champ">
+        <label for="message">Votre projet <i>*</i></label>
+        <textarea id="message" name="Message" required placeholder="Décrivez les travaux envisagés : pièces concernées, surface approximative, délais souhaités…"></textarea>
+      </div>
+      <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off">
+      <p class="form-note">* Champs obligatoires. Vos coordonnées ne servent qu'à vous répondre — elles ne sont ni revendues ni utilisées à d'autres fins.</p>
+      <button type="submit" class="btn btn-sombre btn-envoyer" id="btn-envoyer">Envoyer ma demande de devis</button>
+      <p class="form-msg" id="form-msg" role="status"></p>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <a class="logo" href="index.html">
+        <img src="logo.png" alt="" width="40" height="40">
+        <span>Renov <b>Habitat</b> 33</span>
+      </a>
+      <p>Peinture · Plâtrerie · Sols · Murs · Façades</p>
+      <p>Intervention dans toute la Gironde (33)</p>
+    </div>
+    <div class="foot-nav">
+      <a href="realisations.html">Nos réalisations</a>
+      <a href="services.html">Nos prestations</a>
+      <a href="contact.html">Contact & devis</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+    <div>
+      <p><a href="tel:+33626943994">06 26 94 39 94</a></p>
+      <p><a href="mailto:renov.habitat3324@gmail.com">renov.habitat3324@gmail.com</a></p>
+    </div>
+    <p class="legal">RENOV HABITAT — SIRET 882 330 947 00012 — Assurance décennale et responsabilité civile professionnelle.</p>
+  </div>
+</footer>
+
+<script>
+// Envoi du formulaire sans quitter la page (Formspree en AJAX)
+(function () {
+  var form = document.getElementById('form-devis');
+  var btn = document.getElementById('btn-envoyer');
+  var msg = document.getElementById('form-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    // validation minimale côté navigateur
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+    msg.className = 'form-msg';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) {
+      if (r.ok) {
+        form.reset();
+        msg.className = 'form-msg ok';
+        msg.textContent = 'Message envoyé ! Nous revenons vers vous sous 48 h. Pour une urgence, appelez le 06 26 94 39 94.';
+      } else {
+        throw new Error('erreur serveur');
+      }
+    }).catch(function () {
+      msg.className = 'form-msg erreur';
+      msg.textContent = "L'envoi n'a pas abouti. Réessayez dans un instant, ou contactez-nous directement : 06 26 94 39 94 / renov.habitat3324@gmail.com.";
+    }).finally(function () {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer ma demande de devis';
+    });
+  });
+})();
+</script>
+</body>
+</html>
